@@ -19,4 +19,16 @@ def save
   @id = SqlRunner.run(sql, values).first['id'].to_i
 end
 
+def self.list_all
+  sql = 'SELECT * FROM students;'
+  return SqlRunner.run(sql).map { |student| Student.new(student)  }
+end
+
+def self.find_by_id(id)
+  sql = 'SELECT * FROM students WHERE id = $1;'
+  values = [id]
+  student = SqlRunner.run(sql, values).first
+  return Student.new(student) if student != nil 
+end
+
 end # end class
