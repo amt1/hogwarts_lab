@@ -1,0 +1,8 @@
+<h1>Hogwarts Students List</h1>
+  <% @studentlist.each do |student| %>
+<ul>
+  <li>Name: <%= student.first_name %> <%= student.last_name %></li>
+  <li>House: <%= student.house %></li>
+  <li>Age: <%= student.age %></li>
+</ul>
+  <% end %>
