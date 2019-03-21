@@ -2,7 +2,7 @@ require_relative('../db/sql_runner.rb')
 
 class House
 
-attr_reader :name, :logo_url :id
+attr_reader :name, :logo_url, :id
 
 def initialize(options)
   @id = options['id'].to_i if options['id']
@@ -11,7 +11,7 @@ def initialize(options)
 end
 
 def save
-  sql="INSERT INTO houses (name, logo_url) VALUES ($1, $2) RETURNING id;"
+  sql='INSERT INTO houses (name, logo_url) VALUES ($1, $2) RETURNING id;'
   values=[@name, @logo_url]
   @id = SqlRunner.run(sql,values).first['id'].to_i
 end
