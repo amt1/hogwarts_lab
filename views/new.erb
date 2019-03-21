@@ -9,12 +9,16 @@
 <label for = "age">Age: </label>
 <input type = "number" id="age" name="age" />
 
+<% sql='SELECT id, name FROM houses;'%>
+<% houses_array=SqlRunner.run(sql).map { |house| House.new(house) } %>
 <label for="house">House:</label>
 <select class="" id="house" name="house_id">
-  <option value="1">Gryffindor</option>
-  <option value="2">Ravenclaw</option>
+  <% houses_array.each do |house| %>
+  <option value="<%=house.id%>"><%=house.name%></option>
+  <% end %>
+<!--  <option value="2">Ravenclaw</option>
   <option value="3">Hufflepuff</option>
-  <option value="4">Slytherin</option>
+  <option value="4">Slytherin</option> -->
 </select>
 
 <input type="submit" value="Add" />
