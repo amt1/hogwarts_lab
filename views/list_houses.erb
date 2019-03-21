@@ -1,0 +1,7 @@
+<h1>Hogwarts House List</h1>
+  <% @houselist.each do |house| %>
+  <img src = "<%=house.logo_url%>" alt="<%=house.name%> Logo" class="logo" />
+  <p class="housename">Name: <%= house.name %> </p>
+  <p><a href="<%=house.logo_url%>">Logo URL</a></p>
+  <% end %>
+<br />
