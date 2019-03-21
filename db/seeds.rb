@@ -3,21 +3,21 @@ require_relative('../models/student.rb')
 student1 = Student.new({
   "first_name" => "Harry",
   "last_name" => "Potter",
-  "house" => "Gryffindor",
+  "house_id" => "1",
   "age" => 11
   })
 
   student2 = Student.new({
     "first_name" => "Draco",
     "last_name" => "Malfoy",
-    "house" => "Slytherin",
+    "house_id" => "4",
     "age" => 12
     })
 
   student3 = Student.new({
     "first_name" => "Hermione",
     "last_name" => "Grainger",
-    "house" => "Gryffindor",
+    "house_id" => "1",
     "age" => 11
     })
 
